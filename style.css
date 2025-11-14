@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;               /* black background like a real camera */
+  height: 100vh;                   /* full height of the device screen */
+  display: flex;                   
+  justify-content: flex-end;       /* places the button at the bottom */
+  align-items: center;             
+  overflow: hidden;                /* hides scrollbars */
+}
+
+video {
+  position: absolute;              /* place it in the background */
+  top: 0;
+  left: 0;
+  width: 100%;                     /* stretch to full width */
+  height: 100%;                    /* stretch to full height */
+  object-fit: cover;               /* maintain aspect ratio and cover screen */
+}
+
+#capture {
+  position: relative;
+  z-index: 10;                     /* appear above video */
+  background: white;               /* circular white button */
+  border: none;
+  border-radius: 50%;              /* makes it round */
+  width: 80px;
+  height: 80px;
+  margin-bottom: 30px;             /* distance from bottom */
+  box-shadow: 0 0 10px rgba(255,255,255,0.4); /* subtle glow */
+  cursor: pointer;
+  transition: transform 0.1s ease; /* small animation on press */
+}
+
+#capture:active {
+  transform: scale(0.9);           /* button slightly shrinks when tapped */
+}
+
+@media (max-width: 600px) {
+  #capture {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (min-width: 600px) {
+  #capture {
+    width: 100px;
+    height: 100px;
+  }
+}
